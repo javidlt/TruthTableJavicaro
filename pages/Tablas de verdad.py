@@ -313,45 +313,6 @@ for op in contOrTaut:
             col.append(False)
         columnsOftruthTableWithoutresults[op] = col
 
-def solveTable(columnsOftruthTableWithoutresults):
-    # Resolver Tabla de verdad 
-    for key, values in zip(columnsOftruthTableWithoutresults.keys(), columnsOftruthTableWithoutresults.values()):
-         if values == []:
-            arrayOfVariablesInThisOp = []
-            for cOp in key:
-                if cOp in arrayvarAndTandC:
-                    arrayOfVariablesInThisOp.append(cOp)
-            arrayOfVariablesInThisOp = list(set(arrayOfVariablesInThisOp))
-
-            dictofValuesToOperate = {}
-            contador = 0
-            numOfVari = len(arrayOfVariablesInThisOp)
-            listOfBoolValues = []
-            for vari in arrayOfVariablesInThisOp:
-                listOfValuesForEachVar = []
-                for numIdx in range(qtyOfRows):
-                    contador += 1
-                    listOfValuesForEachVar.append((columnsOftruthTableWithoutresults.get(vari))[numIdx])
-                listOfBoolValues.append((vari, listOfValuesForEachVar))
-
-            qtyOfBoolsPerVar = len(listOfBoolValues[0][1])
-
-            everyEvaluation = []
-            for i in range(qtyOfBoolsPerVar):
-                dictExpression = {}
-                for val in arrayOfVariablesInThisOp:
-                    boolToAdd = columnsOftruthTableWithoutresults.get(val)[i]
-                    dictExpression[val] = boolToAdd
-                everyEvaluation.append(dictExpression)
-
-            for evalu in everyEvaluation:
-                result = evaluateLogicExpression(key, evalu)
-                columnsOftruthTableWithoutresults[key].append(result)
-            
-            resultTable = columnsOftruthTableWithoutresults
-
-            return resultTable
-
 try: 
     # Resolver Tabla de verdad 
     for key, values in zip(columnsOftruthTableWithoutresults.keys(), columnsOftruthTableWithoutresults.values()):
