@@ -328,7 +328,13 @@ page_names = ["Generador automatico de conjuntos", "Ingresar tus conjuntos conju
 page = sb.radio("", page_names, index=0)
 
 if page == "Generador automatico de conjuntos":
-    generador() 
+    try:
+        generador()
+    except:
+        st.write("Error de sintaxis: Recuerda que debes usar parentesis para indicar jerarquí si deseas usar más de un tipo de operación para los conjuntos.") 
     # if listadeConjuntos != []:
 elif page == "Ingresar tus conjuntos conjuntos":
-    ingresar()
+    try:
+        ingresar()
+    except:
+        st.write("Error de sintaxis: Recuerda que debes usar parentesis para indicar jerarquí si deseas usar más de un tipo de operación para los conjuntos.") 
