@@ -1,5 +1,3 @@
 more-itertools
 pandas
 streamlit
-re
-random
