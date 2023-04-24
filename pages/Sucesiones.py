@@ -1,4 +1,4 @@
-import more_itertools as mit
+import more-itertools as mit
 import pandas as pd
 import streamlit as st
 
