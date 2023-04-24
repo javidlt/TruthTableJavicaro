@@ -17,5 +17,6 @@ st.markdown(
     ### Herramientas 
     - Calculadora de tablas de verdad
     - Operaciones de Conjuntos
+    - Generador de sucesiones
 """
 )
